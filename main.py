@@ -1,6 +1,7 @@
 import streamlit as st
 import os
 import json
+import pandas as pd
 import requests
 
 
@@ -24,6 +25,6 @@ if string_data:
 
 if st.button('Send'):
     res = requests.post(API_ENDPOINT2, json={"project_id": question_area, "country" : country , "industry" : inds, "project_type" : proj, "top_number" : top_number})
-    #print(res.json())
-    background_extraction = st.text_area("Input", height=200, value =res.json(), disabled=False)
+    df3=pd.DataFrame(res.json())
+    st.dataframe(df3)
     
