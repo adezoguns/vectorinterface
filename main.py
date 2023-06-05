@@ -28,6 +28,6 @@ try:
         df=pd.DataFrame(res.json()["Results"])
         df["projectid"] = df["projectid"].astype(str).str.replace(".0000", "").astype(float)
         df["projectid"] = df["projectid"].astype('int64')
-        st.dataframe(df)
+        st.dataframe(df, width=20)
 except Exception as e:
     st.text_area("Error", height=200, value ="Enter project id", disabled=True)
