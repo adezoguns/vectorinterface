@@ -22,10 +22,12 @@ top_number = st.slider("Top_k", 1, 10, 1)
 if string_data:
     question_area=string_data
    
-
-if st.button('Send'):
-    res = requests.post(API_ENDPOINT2, json={"project_id": question_area, "country" : country , "industry" : inds, "project_type" : proj, "top_number" : top_number})
-    df=pd.DataFrame(res.json()["Results"])
-    df["projectid"] = df["projectid"].astype(str).str.replace(".0000", "").astype(float)
-    df["projectid"] = df["projectid"].astype('int64')
-    st.dataframe(df)
+try:
+    if st.button('Send') and question_area is not None:
+        res = requests.post(API_ENDPOINT2, json={"project_id": question_area, "country" : country , "industry" : inds, "project_type" : proj, "top_number" : top_number})
+        df=pd.DataFrame(res.json()["Results"])
+        df["projectid"] = df["projectid"].astype(str).str.replace(".0000", "").astype(float)
+        df["projectid"] = df["projectid"].astype('int64')
+        st.dataframe(df)
+except Exception as e:
+    st.text_area("Error", height=200, value ="Enter project id", disabled=True)
