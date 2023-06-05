@@ -23,7 +23,7 @@ if string_data:
     question_area=string_data
    
 try:
-    if st.button('Send') and question_area is not None:
+    if st.button('Send'):
         res = requests.post(API_ENDPOINT2, json={"project_id": question_area, "country" : country , "industry" : inds, "project_type" : proj, "top_number" : top_number})
         df=pd.DataFrame(res.json()["Results"])
         df["projectid"] = df["projectid"].astype(str).str.replace(".0000", "").astype(float)
