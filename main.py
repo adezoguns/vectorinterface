@@ -25,6 +25,6 @@ if string_data:
 
 if st.button('Send'):
     res = requests.post(API_ENDPOINT2, json={"project_id": question_area, "country" : country , "industry" : inds, "project_type" : proj, "top_number" : top_number})
-    df3=pd.DataFrame(res.json())
+    df3=pd.DataFrame(json.loads(res.json()))
     st.dataframe(df3)
     
