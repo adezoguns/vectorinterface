@@ -18,7 +18,7 @@ inds = st.selectbox("Industry", ["None","Consumer Goods & Services", "Energy & U
                                 "Materials & Natural Resources", "Public Policy", "Technology & Telecommunication", "Other"])
 office = st.selectbox("Atheneum_office", ["None", "China", "London", "Berlin", \
                                         "Munich", "Shanghai", "Lahore", \
-                                        "Newyork", "San Francisco", "Santiago", "Tokyo"])
+                                        "New York", "San Francisco", "Santiago", "Tokyo"])
 proj = st.selectbox("Project_type", ["None","Expert Backed Research", "Expert Sessions", "Expert Placement", "Expert Survey Research"])
 top_number = st.slider("Top_k", 1, 10, 1)
 
