@@ -15,7 +15,7 @@ country = st.selectbox("Country", ["None", "United States", "China", "Japan", "G
 inds = st.selectbox("Industry", ["None","Consumer Goods & Services", "Energy & Utilities", \
                           "Financials & Real Estate", "Health Care", \
                             "Industrial & Transportation", \
-                                "Materials & Natural Resources", "Public_policy", "Technology & Telecommunication", "Other"])
+                                "Materials & Natural Resources", "Public Policy", "Technology & Telecommunication", "Other"])
 proj = st.selectbox("Project_type", ["None","Expert Backed Research", "Expert Sessions", "Expert Placement", "Expert Survey Research"])
 top_number = st.slider("Top_k", 1, 10, 1)
 
