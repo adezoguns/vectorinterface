@@ -30,4 +30,4 @@ try:
         df["projectid"] = df["projectid"].astype('int64')
         st.dataframe(df, width=600)
 except Exception as e:
-    st.text_area("Error", height=200, value ="Enter project id", disabled=True)
+    st.text_area("Error", height=200, value ="No results, please try a different combination of filters or project id.\n Thank You!!!", disabled=True)
