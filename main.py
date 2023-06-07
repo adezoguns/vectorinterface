@@ -16,7 +16,10 @@ inds = st.selectbox("Industry", ["None","Consumer Goods & Services", "Energy & U
                           "Financials & Real Estate", "Health Care", \
                             "Industrial & Transportation", \
                                 "Materials & Natural Resources", "Public Policy", "Technology & Telecommunication", "Other"])
-proj = st.selectbox("Project_type", ["None","Expert Backed Research", "Expert Sessions", "Expert Placement", "Expert Survey Research"])
+office = st.selectbox("Atheneum office", ["None", "China", "London", "Berlin", \
+                                        "Munich", "Shanghai", "Lahore", \
+                                        "Newyork", "San Francisco", "Santiago", "Tokyo"])
+proj = st.selectbox("Project type", ["None","Expert Backed Research", "Expert Sessions", "Expert Placement", "Expert Survey Research"])
 top_number = st.slider("Top_k", 1, 10, 1)
 
 if string_data:
@@ -24,7 +27,8 @@ if string_data:
    
 try:
     if st.button('Send') and question_area is not "":
-        res = requests.post(API_ENDPOINT2, json={"project_id": question_area, "country" : country , "industry" : inds, "project_type" : proj, "top_number" : top_number})
+        res = requests.post(API_ENDPOINT2, json={"project_id": question_area, "country" : country , 
+                                                 "industry" : inds, "project_type" : proj, "top_number" : top_number, "office": office})
         df=pd.DataFrame(res.json()["Results"])
         df["projectid"] = df["projectid"].astype(str).str.replace(".0000", "").astype(float)
         df["projectid"] = df["projectid"].astype('int64')
