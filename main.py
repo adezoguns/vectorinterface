@@ -16,10 +16,10 @@ inds = st.selectbox("Industry", ["None","Consumer Goods & Services", "Energy & U
                           "Financials & Real Estate", "Health Care", \
                             "Industrial & Transportation", \
                                 "Materials & Natural Resources", "Public Policy", "Technology & Telecommunication", "Other"])
-office = st.selectbox("Atheneum office", ["None", "China", "London", "Berlin", \
+office = st.selectbox("Atheneum_office", ["None", "China", "London", "Berlin", \
                                         "Munich", "Shanghai", "Lahore", \
                                         "Newyork", "San Francisco", "Santiago", "Tokyo"])
-proj = st.selectbox("Project type", ["None","Expert Backed Research", "Expert Sessions", "Expert Placement", "Expert Survey Research"])
+proj = st.selectbox("Project_type", ["None","Expert Backed Research", "Expert Sessions", "Expert Placement", "Expert Survey Research"])
 top_number = st.slider("Top_k", 1, 10, 1)
 
 if string_data:
