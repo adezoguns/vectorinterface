@@ -8,7 +8,7 @@ import requests
 string_data = False
 API_ENDPOINT2= "https://ynu1ow7ibh.execute-api.eu-central-1.amazonaws.com/vectordb"
 
-st.markdown("<h1 style='text-align: center; color:  #d68910;'>Vector Database </h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color:  #d68910;'>Semantic Project Search </h1>", unsafe_allow_html=True)
 question_area = st.text_input("Project ID")
 #temp = st.slider("Temeperature", 0, 10, 1)
 country = st.selectbox("Country", ["None", "United States", "China", "Japan", "Germany", "United Kingdom"])
